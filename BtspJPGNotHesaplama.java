@@ -7,21 +7,21 @@ public class BtspJPGNotHesaplama {
     public static void main(String[] args) {
         //odev 1 notu set ediliyor
         
-        float birinciOdevNotu = setNot((float) 0.1, "1. Ödev Notunu Giriniz");
-        float ikinciOdevNotu = setNot((float) 0.1, "2. Ödev Notunu Giriniz");
-        float vizeNotu = setNot((float) 0.3, "Vize Notunu Giriniz");
-        float finalNotu = setNot((float) 0.5, "Final Notunu Giriniz");
+        int birinciOdevNotu = setNot((float) 0.1, "1. Ödev Notunu Giriniz");
+        int ikinciOdevNotu = setNot((float) 0.1, "2. Ödev Notunu Giriniz");
+        int vizeNotu = setNot((float) 0.3, "Vize Notunu Giriniz");
+        int finalNotu = setNot((float) 0.5, "Final Notunu Giriniz");
         
-        int toplamNot = (int) birinciOdevNotu + (int) ikinciOdevNotu + (int) vizeNotu + (int) finalNotu;
+        int toplamNot = birinciOdevNotu + ikinciOdevNotu + vizeNotu + finalNotu;
                 
-        JOptionPane.showMessageDialog(null, "Ödev 1 Notu:"+ (int) birinciOdevNotu);
-        JOptionPane.showMessageDialog(null, "Ödev 2 Notu:"+ (int) ikinciOdevNotu);
-        JOptionPane.showMessageDialog(null, "Vize Notu:"+ (int) vizeNotu);
-        JOptionPane.showMessageDialog(null, "Final Notu:"+ (int) finalNotu);
-        JOptionPane.showMessageDialog(null, "Toplam Notunuz:"+ (int) toplamNot);
+        JOptionPane.showMessageDialog(null, "Ödev 1 Notu:"+ birinciOdevNotu);
+        JOptionPane.showMessageDialog(null, "Ödev 2 Notu:"+ ikinciOdevNotu);
+        JOptionPane.showMessageDialog(null, "Vize Notu:"+ vizeNotu);
+        JOptionPane.showMessageDialog(null, "Final Notu:"+ finalNotu);
+        JOptionPane.showMessageDialog(null, "Toplam Notunuz:"+ toplamNot);
     }
     
-    public static float setNot(float oran, String dialogMetin)
+    public static int setNot(float oran, String dialogMetin)
     {
         boolean durum = false;
         int not = 0;
@@ -52,6 +52,6 @@ public class BtspJPGNotHesaplama {
         }while(durum == false);
         
         //not ile oranı çarparak sonucu gönderiyoruz.
-        return oran*not;
+        return (int) (oran*not);
     }
 }
